@@ -1,0 +1,44 @@
+json
+{
+  "name": "BuxarTranslate",
+  "version": "1.0.0",
+  "description": "Thunderbird extension for translating selected text in emails using Google Translate API",
+  "main": "src/background.js",
+  "scripts": {
+    "build": "./scripts/build-xpi.sh",
+    "pack": "cd src && zip -r ../BuxarTranslate.xpi ./*",
+    "clean": "rm -rf build/",
+    "rebuild": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "thunderbird",
+    "extension",
+    "translate",
+    "translation",
+    "google-translate",
+    "email",
+    "multilingual"
+  ],
+  "author": "BuxarNET",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BuxarNET/BuxarTranslate"
+  },
+  "homepage": "https://buxarnet.ru/BuxarTranslate/",
+  "bugs": {
+    "url": "https://github.com/BuxarNET/BuxarTranslate/issues"
+  },
+  "devDependencies": {},
+  "files": [
+    "src/**/*",
+    "docs/**/*",
+    "scripts/**/*",
+    "LICENSE",
+    "README.md",
+    "README_RU.md"
+  ],
+  "engines": {
+    "thunderbird": ">=78.0"
+  }
+}

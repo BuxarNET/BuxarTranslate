@@ -1,0 +1,174 @@
+{
+  "languageName": {
+  "message": "English",
+  "description": "Name of the language in English"
+  },
+  "extensionName": {
+    "message": "BuxarTranslate",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Translate selected text in Thunderbird",
+    "description": "Extension description"
+  },
+  "howToTranslate": {
+    "message": "💡 How to translate:",
+    "description": "Instructions header"
+  },
+  "translateSteps": {
+    "message": "1. Select text in any email\n2. Right-click and choose \"Translate to [Language]\"\n3. See translation in notification and separate window",
+    "description": "Step-by-step instructions"
+  },
+  "noTranslationsYet": {
+    "message": "No translations yet",
+    "description": "Message when no translations available"
+  },
+  "selectTextToTranslate": {
+    "message": "Select text and use right-click menu to translate",
+    "description": "Instruction to select text"
+  },
+  "targetLanguage": {
+    "message": "🎯 Target Language",
+    "description": "Target language section title"
+  },
+  "searchLanguages": {
+    "message": "🔍 Search 100+ languages...",
+    "description": "Search languages placeholder"
+  },
+  "languagesFound": {
+    "message": "$1 languages found",
+    "description": "Number of languages found in search"
+  },
+  "languagesAvailable": {
+    "message": "$1 languages available",
+    "description": "Total languages available"
+  },
+  "recentLanguages": {
+    "message": "⚡ Recent Languages:",
+    "description": "Recent languages section title"
+  },
+  "windowDisplayTime": {
+    "message": "⏰ Translation Window Display Time (seconds):",
+    "description": "Window display time label"
+  },
+  "windowDisplayTimeHelp": {
+    "message": "Time before translation window automatically closes (5-300 seconds)",
+    "description": "Window display time help text"
+  },
+  "saveSettings": {
+    "message": "💾 Save Settings",
+    "description": "Save settings button text"
+  },
+  "nowTranslatingTo": {
+    "message": "✓ Now translating to $1",
+    "description": "Success message when language is saved"
+  },
+  "pleaseSelectLanguage": {
+    "message": "Please select a language",
+    "description": "Error when no language selected"
+  },
+  "invalidLanguage": {
+    "message": "Invalid language selected",
+    "description": "Error when invalid language selected"
+  },
+  "displayTimeRangeError": {
+    "message": "Display time must be between 5 and 300 seconds",
+    "description": "Error when display time out of range"
+  },
+  "errorSavingSettings": {
+    "message": "✗ Error saving settings",
+    "description": "Generic error saving settings"
+  },
+  "originalText": {
+    "message": "📝 Original ($1):",
+    "description": "Original text label with language"
+  },
+  "translatedText": {
+    "message": "🌍 Translated ($1):",
+    "description": "Translated text label with language"
+  },
+  "autoDetected": {
+    "message": "🔍 Auto-detected: $1",
+    "description": "Auto-detected language info"
+  },
+  "translator": {
+    "message": "🔧 Translator: Google Translate",
+    "description": "Translator service info"
+  },
+  "copyTranslation": {
+    "message": "📋 Copy Translation",
+    "description": "Copy translation button text"
+  },
+  "copiedToClipboard": {
+    "message": "✓ Copied to clipboard!",
+    "description": "Success message when copied to clipboard"
+  },
+  "poweredByGoogle": {
+    "message": "🚀 Powered by Google Translate - 100+ languages, completely free!",
+    "description": "Powered by Google message"
+  },
+  "autoDetectInfo": {
+    "message": "💡 The extension automatically detects source language from any language",
+    "description": "Auto-detection info"
+  },
+  "selectTextRightClick": {
+    "message": "Select text → Right-click → Translate",
+    "description": "Short instructions in header"
+  },
+  "translateTo": {
+    "message": "Translate to $1",
+    "description": "Context menu title"
+  },
+  "interfaceLanguage": {
+    "message": "🌐 Interface Language:",
+    "description": "Interface language section title"
+  },
+  "interfaceLanguageHelp": {
+    "message": "Language of extension interface",
+    "description": "Interface language help text"
+  },
+  "autoLanguage": {
+    "message": "Auto (System)",
+    "description": "Auto language option"
+  },
+  "loading": {
+    "message": "Loading...",
+    "description": "Loading message"
+  },
+  "settingsLoaded": {
+    "message": "Settings loaded",
+    "description": "Settings loaded successfully"
+  },
+  "savingSettings": {
+    "message": "Saving settings...",
+    "description": "Saving settings in progress"
+  },
+  "translationResult": {
+    "message": "Translation Result",
+    "description": "Title of translation window"
+  },
+  "close": {
+    "message": "Close",
+    "description": "Close button text"
+  },
+  "thisWindowWillClose": {
+    "message": "This window will close automatically in $1 seconds",
+    "description": "Auto-close notice"
+  },
+  "simpleTranslateExtension": {
+    "message": "BuxarTranslate Extension",
+    "description": "Extension name in footer"
+  },
+  "translatedAt": {
+    "message": "Translated at: $1",
+    "description": "Translation timestamp"
+  },
+  "currentLanguage": {
+    "message": "Current",
+    "description": "Current language label"
+  },
+  "errorLoadingSettings": {
+  "message": "Error loading settings",
+  "description": "Error when settings fail to load"
+}
+}

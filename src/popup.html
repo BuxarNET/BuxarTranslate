@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 400px;
+            padding: 15px;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #0066cc;
+            color: white;
+            border-radius: 8px;
+        }
+        .settings-section {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 14px;
+        }
+        .search-box {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .search-box:focus {
+            border-color: #0066cc;
+            outline: none;
+        }
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        select {
+            border: 2px solid #ddd;
+            background: white;
+        }
+        select:focus {
+            border-color: #0066cc;
+            outline: none;
+        }
+        button {
+            background: #0066cc;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #0052a3;
+        }
+        .save-btn {
+            background: #ffc107;
+            color: #000;
+        }
+        .save-btn:hover {
+            background: #e0a800;
+        }
+        .translation {
+            margin-top: 15px;
+            padding: 15px;
+            border: 2px solid #0066cc;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .language-info {
+            font-size: 12px;
+            color: #6c757d;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #eee;
+        }
+        .instructions {
+            font-size: 12px;
+            color: #6c757d;
+            margin: 10px 0;
+            padding: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+        }
+        .status {
+            font-size: 12px;
+            text-align: center;
+            margin: 5px 0;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .quick-languages {
+            display: flex;
+            gap: 8px;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+        .quick-lang-btn {
+            flex: 1;
+            min-width: 60px;
+            padding: 8px 5px;
+            background: #e9ecef;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 11px;
+            text-align: center;
+            transition: all 0.2s;
+            color: #000;
+            font-weight: normal;
+        }
+        .quick-lang-btn:hover {
+            background: #dee2e6;
+            border-color: #adb5bd;
+            color: #000;
+        }
+        .quick-lang-btn.active {
+            background: #0066cc;
+            color: white;
+            border-color: #0052a3;
+            font-weight: bold;
+        }
+        .quick-languages-title {
+            font-size: 12px;
+            color: #6c757d;
+            margin-bottom: 5px;
+        }
+        .language-count {
+            font-size: 11px;
+            color: #6c757d;
+            text-align: right;
+            margin-top: 5px;
+        }
+        .usage-tips {
+            font-size: 11px;
+            color: #6c757d;
+            margin-top: 10px;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border-left: 3px solid #28a745;
+        }
+        .display-time-section {
+            margin: 15px 0;
+        }
+        .display-time-label {
+            font-size: 12px;
+            color: #333;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .display-time-input {
+            width: 100%;
+            padding: 8px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .display-time-input:focus {
+            border-color: #0066cc;
+            outline: none;
+        }
+        .display-time-help {
+            font-size: 11px;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+        .lang-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            background: #e9ecef;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+        .lang-btn:hover {
+            background: #dee2e6;
+        }
+        .lang-section {
+            text-align: center;
+        }
+        .current-lang {
+            font-size: 11px;
+            color: #6c757d;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3 data-i18n="extensionName">BuxarTranslate</h3>
+        <div style="font-size: 12px;" data-i18n="selectTextRightClick">Select text → Right-click → Translate</div>
+    </div>
+
+    <!-- ИНСТРУКЦИЯ - ПЕРВЫЙ БЛОК -->
+    <div class="instructions">
+        <span data-i18n="howToTranslate">💡 How to translate:</span><br>
+        <span data-i18n="translateSteps">1. Select text in any email<br>2. Right-click and choose "Translate to [Language]"<br>3. See translation in notification and separate window</span>
+    </div>
+
+    <!-- ОКНО ПЕРЕВОДА - ТРЕТИЙ БЛОК -->
+    <div id="result" class="translation">
+        Loading last translation...
+    </div>
+
+    <!-- НАСТРОЙКИ - ЧЕТВЕРТЫЙ БЛОК -->
+    <div class="settings-section">
+        <div class="section-title" data-i18n="targetLanguage">🎯 Target Language</div>
+
+        <input type="text" id="searchLanguage" class="search-box" placeholder="" data-i18n-placeholder="searchLanguages">
+        <select id="targetLanguage">
+            <!-- Languages will be populated by JavaScript -->
+        </select>
+        <div id="languageCount" class="language-count" data-i18n="languagesAvailable">0 languages available</div>
+
+        <div class="quick-languages-title" data-i18n="recentLanguages">⚡ Recent Languages:</div>
+        <div class="quick-languages" id="quickLanguages">
+            <!-- Quick language buttons will be populated by JavaScript -->
+        </div>
+
+        <div class="display-time-section">
+            <label class="display-time-label" data-i18n="windowDisplayTime">⏰ Translation Window Display Time (seconds):</label>
+            <input type="number" id="windowDisplayTime" class="display-time-input" min="5" max="300" value="30">
+            <div class="display-time-help" data-i18n="windowDisplayTimeHelp">Time before translation window automatically closes (5-300 seconds)</div>
+        </div>
+
+        <!-- ДОБАВЬТЕ ЭТОТ БЛОК -->
+        <div class="display-time-section">
+            <label class="display-time-label" data-i18n="interfaceLanguage">🌐 Interface Language:</label>
+            <select id="interfaceLanguage" class="display-time-input">
+    <option value="auto" data-i18n="autoLanguage">Auto (System)</option>
+    <!-- Опции будут добавлены динамически -->
+</select>
+            <div class="display-time-help" data-i18n="interfaceLanguageHelp">Language of extension interface</div>
+        </div>
+
+        <button id="saveSettings" class="save-btn" data-i18n="saveSettings">💾 Save Settings</button>
+        <div id="status" class="status"></div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

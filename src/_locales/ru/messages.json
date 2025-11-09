@@ -1,0 +1,170 @@
+{
+  "languageName": {
+  "message": "Русский",
+  "description": "Name of the language in Russian"
+  },
+  "extensionName": {
+    "message": "BuxarTranslate",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Переводите выделенный текст в Thunderbird",
+    "description": "Extension description"
+  },
+  "howToTranslate": {
+    "message": "💡 Как переводить:",
+    "description": "Instructions header"
+  },
+  "translateSteps": {
+    "message": "1. Выделите текст в любом письме\n2. Нажмите правую кнопку и выберите «Перевести на [Язык]»\n3. Смотрите перевод в уведомлении и отдельном окне",
+    "description": "Step-by-step instructions"
+  },
+  "noTranslationsYet": {
+    "message": "Пока нет переводов",
+    "description": "Message when no translations available"
+  },
+  "selectTextToTranslate": {
+    "message": "Выделите текст и используйте правую кнопку мыши для перевода",
+    "description": "Instruction to select text"
+  },
+  "targetLanguage": {
+    "message": "🎯 Целевой язык",
+    "description": "Target language section title"
+  },
+  "searchLanguages": {
+    "message": "🔍 Поиск среди 100+ языков...",
+    "description": "Search languages placeholder"
+  },
+  "languagesFound": {
+    "message": "Найдено $1 языков",
+    "description": "Number of languages found in search"
+  },
+  "languagesAvailable": {
+    "message": "Доступно $1 языков",
+    "description": "Total languages available"
+  },
+  "recentLanguages": {
+    "message": "⚡ Недавние языки:",
+    "description": "Recent languages section title"
+  },
+  "windowDisplayTime": {
+    "message": "⏰ Время отображения окна перевода (секунды):",
+    "description": "Window display time label"
+  },
+  "windowDisplayTimeHelp": {
+    "message": "Время до автоматического закрытия окна перевода (5-300 секунд)",
+    "description": "Window display time help text"
+  },
+  "saveSettings": {
+    "message": "💾 Сохранить настройки",
+    "description": "Save settings button text"
+  },
+  "nowTranslatingTo": {
+    "message": "✓ Теперь переводим на $1",
+    "description": "Success message when language is saved"
+  },
+  "pleaseSelectLanguage": {
+    "message": "Пожалуйста, выберите язык",
+    "description": "Error when no language selected"
+  },
+  "invalidLanguage": {
+    "message": "Выбран неверный язык",
+    "description": "Error when invalid language selected"
+  },
+  "displayTimeRangeError": {
+    "message": "Время отображения должно быть от 5 до 300 секунд",
+    "description": "Error when display time out of range"
+  },
+  "errorSavingSettings": {
+    "message": "✗ Ошибка сохранения настроек",
+    "description": "Generic error saving settings"
+  },
+  "originalText": {
+    "message": "📝 Оригинал ($1):",
+    "description": "Original text label with language"
+  },
+  "translatedText": {
+    "message": "🌍 Перевод ($1):",
+    "description": "Translated text label with language"
+  },
+  "autoDetected": {
+    "message": "🔍 Автоопределение: $1",
+    "description": "Auto-detected language info"
+  },
+  "translator": {
+    "message": "🔧 Переводчик: Google Translate",
+    "description": "Translator service info"
+  },
+  "copyTranslation": {
+    "message": "📋 Копировать перевод",
+    "description": "Copy translation button text"
+  },
+  "copiedToClipboard": {
+    "message": "✓ Скопировано в буфер обмена!",
+    "description": "Success message when copied to clipboard"
+  },
+  "poweredByGoogle": {
+    "message": "🚀 Работает на Google Translate - 100+ языков, полностью бесплатно!",
+    "description": "Powered by Google message"
+  },
+  "autoDetectInfo": {
+    "message": "💡 Расширение автоматически определяет исходный язык с любого языка",
+    "description": "Auto-detection info"
+  },
+  "selectTextRightClick": {
+    "message": "Выделите текст → Правая кнопка → Перевести",
+    "description": "Short instructions in header"
+  },
+  "translateTo": {
+    "message": "Перевести на $1",
+    "description": "Context menu title"
+  },
+  "interfaceLanguage": {
+    "message": "🌐 Язык интерфейса:",
+    "description": "Interface language section title"
+  },
+  "interfaceLanguageHelp": {
+    "message": "Язык интерфейса расширения",
+    "description": "Interface language help text"
+  },
+  "autoLanguage": {
+    "message": "Авто (Система)",
+    "description": "Auto language option"
+  },
+  "loading": {
+    "message": "Загрузка...",
+    "description": "Loading message"
+  },
+  "settingsLoaded": {
+    "message": "Настройки загружены",
+    "description": "Settings loaded successfully"
+  },
+  "savingSettings": {
+    "message": "Сохранение настроек...",
+    "description": "Saving settings in progress"
+  },
+  "translationResult": {
+    "message": "Результат перевода",
+    "description": "Title of translation window"
+  },
+  "close": {
+    "message": "Закрыть",
+    "description": "Close button text"
+  },
+  "thisWindowWillClose": {
+    "message": "Это окно закроется автоматически через $1 секунд",
+    "description": "Auto-close notice"
+  },
+  "simpleTranslateExtension": {
+    "message": "Расширение BuxarTranslate",
+    "description": "Extension name in footer"
+  },
+  "translatedAt": {
+    "message": "Переведено: $1",
+    "description": "Translation timestamp"
+  },
+  "currentLanguage": {
+    "message": "Текущий",
+    "description": "Current language label"
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "extensionName": {
+    "message": "BuxarTranslate",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Traduci il testo selezionato in Thunderbird",
+    "description": "Extension description"
+  },
+  "languageName": {
+    "message": "Italiano",
+    "description": "Name of the language in Italian"
+  },
+  "howToTranslate": {
+    "message": "💡 Come tradurre:",
+    "description": "Instructions header"
+  },
+  "translateSteps": {
+    "message": "1. Seleziona il testo in qualsiasi email\n2. Clic destro e scegli \"Traduci in [Lingua]\"\n3. Vedi la traduzione nella notifica e finestra separata",
+    "description": "Step-by-step instructions"
+  },
+  "noTranslationsYet": {
+    "message": "Ancora nessuna traduzione",
+    "description": "Message when no translations available"
+  },
+  "selectTextToTranslate": {
+    "message": "Seleziona il testo e usa il menu contestuale per tradurre",
+    "description": "Instruction to select text"
+  },
+  "targetLanguage": {
+    "message": "🎯 Lingua di Destinazione",
+    "description": "Target language section title"
+  },
+  "searchLanguages": {
+    "message": "🔍 Cerca tra 100+ lingue...",
+    "description": "Search languages placeholder"
+  },
+  "languagesFound": {
+    "message": "$1 lingue trovate",
+    "description": "Number of languages found in search"
+  },
+  "languagesAvailable": {
+    "message": "$1 lingue disponibili",
+    "description": "Total languages available"
+  },
+  "recentLanguages": {
+    "message": "⚡ Lingue recenti:",
+    "description": "Recent languages section title"
+  },
+  "windowDisplayTime": {
+    "message": "⏰ Tempo di visualizzazione finestra (secondi):",
+    "description": "Window display time label"
+  },
+  "windowDisplayTimeHelp": {
+    "message": "Tempo prima che la finestra di traduzione si chiuda automaticamente (5-300 secondi)",
+    "description": "Window display time help text"
+  },
+  "saveSettings": {
+    "message": "💾 Salva impostazioni",
+    "description": "Save settings button text"
+  },
+  "nowTranslatingTo": {
+    "message": "✓ Ora traducendo in $1",
+    "description": "Success message when language is saved"
+  },
+  "pleaseSelectLanguage": {
+    "message": "Per favore seleziona una lingua",
+    "description": "Error when no language selected"
+  },
+  "invalidLanguage": {
+    "message": "Lingua non valida selezionata",
+    "description": "Error when invalid language selected"
+  },
+  "displayTimeRangeError": {
+    "message": "Il tempo di visualizzazione deve essere tra 5 e 300 secondi",
+    "description": "Error when display time out of range"
+  },
+  "errorSavingSettings": {
+    "message": "✗ Errore nel salvare le impostazioni",
+    "description": "Generic error saving settings"
+  },
+  "originalText": {
+    "message": "📝 Originale ($1):",
+    "description": "Original text label with language"
+  },
+  "translatedText": {
+    "message": "🌍 Tradotto ($1):",
+    "description": "Translated text label with language"
+  },
+  "autoDetected": {
+    "message": "🔍 Rilevato automaticamente: $1",
+    "description": "Auto-detected language info"
+  },
+  "translator": {
+    "message": "🔧 Traduttore: Google Translate",
+    "description": "Translator service info"
+  },
+  "copyTranslation": {
+    "message": "📋 Copia traduzione",
+    "description": "Copy translation button text"
+  },
+  "copiedToClipboard": {
+    "message": "✓ Copiato negli appunti!",
+    "description": "Success message when copied to clipboard"
+  },
+  "poweredByGoogle": {
+    "message": "🚀 Alimentato da Google Translate - 100+ lingue, completamente gratuito!",
+    "description": "Powered by Google message"
+  },
+  "autoDetectInfo": {
+    "message": "💡 L'estensione rileva automaticamente la lingua di origine da qualsiasi lingua",
+    "description": "Auto-detection info"
+  },
+  "selectTextRightClick": {
+    "message": "Seleziona testo → Clic destro → Traduci",
+    "description": "Short instructions in header"
+  },
+  "translateTo": {
+    "message": "Traduci in $1",
+    "description": "Context menu title"
+  },
+  "interfaceLanguage": {
+    "message": "🌐 Lingua dell'interfaccia:",
+    "description": "Interface language section title"
+  },
+  "interfaceLanguageHelp": {
+    "message": "Lingua dell'interfaccia dell'estensione",
+    "description": "Interface language help text"
+  },
+  "autoLanguage": {
+    "message": "Auto (Sistema)",
+    "description": "Auto language option"
+  },
+  "loading": {
+    "message": "Caricamento...",
+    "description": "Loading message"
+  },
+  "settingsLoaded": {
+    "message": "Impostazioni caricate",
+    "description": "Settings loaded successfully"
+  },
+  "savingSettings": {
+    "message": "Salvataggio impostazioni...",
+    "description": "Saving settings in progress"
+  },
+  "translationResult": {
+    "message": "Risultato traduzione",
+    "description": "Title of translation window"
+  },
+  "close": {
+    "message": "Chiudi",
+    "description": "Close button text"
+  },
+  "thisWindowWillClose": {
+    "message": "Questa finestra si chiuderà automaticamente in $1 secondi",
+    "description": "Auto-close notice"
+  },
+  "simpleTranslateExtension": {
+    "message": "Estensione BuxarTranslate",
+    "description": "Extension name in footer"
+  },
+  "translatedAt": {
+    "message": "Tradotto il: $1",
+    "description": "Translation timestamp"
+  },
+  "currentLanguage": {
+    "message": "Attuale",
+    "description": "Current language label"
+  },
+  "errorLoadingSettings": {
+    "message": "Errore nel caricare le impostazioni",
+    "description": "Error when settings fail to load"
+  }
+}
