@@ -15,3 +15,14 @@ npm-debug.log*
 
 # Node.js
 node_modules/
+
+# Eclipse
+.project
+.settings/
+.metadata/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
