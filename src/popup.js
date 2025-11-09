@@ -3,6 +3,8 @@ let recentLanguages = [];
 let filteredLanguages = {};
 let currentUILang = 'en';
 let availableUILanguages = {};
+/* eslint-disable no-unsafe-innerhtml */
+// Безопасная функция для установки HTML
 
 // Функция для сканирования доступных языков
 async function scanAvailableLanguages() {
@@ -173,13 +175,11 @@ function getTranslation(messageKey, substitutions = []) {
 document.addEventListener('DOMContentLoaded', async function() {
     console.log("Popup loaded");
 
-    // Инициализируем менеджер языка (он загрузит настройки и переводы)
+    // Инициализируем менеджер языка
     await LanguageManager.init();
-
-    // Применяем язык ко всей странице
     LanguageManager.translatePage();
 
-    // Загружаем остальные настройки
+    // Загружаем настройки
     await loadSettings();
 
     // Обработчики событий
@@ -197,7 +197,9 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
         }
     });
-});
+	// ЗАГРУЖАЕМ ПОСЛЕДНИЙ ПЕРЕВОД ПОСЛЕ ВСЕХ НАСТРОЕК
+	    await loadLastTranslation();
+	});
 
 // Загружаем настройки (без переводов)
 async function loadSettings() {
@@ -246,10 +248,14 @@ async function loadSettings() {
 // Загружаем последний перевод
 async function loadLastTranslation() {
     try {
+        console.log("Loading last translation...");
         const response = await browser.runtime.sendMessage({action: "getTranslation"});
-        if (response.lastTranslation) {
+        console.log("Translation response:", response);
+        
+        if (response && response.lastTranslation) {
             displayTranslation(response.lastTranslation);
         } else {
+            console.log("No translation found, showing default message");
             showNoTranslation();
         }
     } catch (error) {
@@ -428,49 +434,113 @@ async function saveSettings() {
 
 // Функция для отображения перевода с сохранением форматирования
 function displayTranslation(trans) {
+    console.log("=== displayTranslation called ===");
+    console.log("Translation data:", trans);
+    
     const resultDiv = document.getElementById('result');
-
-    if (trans) {
-        const sourceLangName = allLanguages[trans.sourceLang] || trans.sourceLang;
-        const targetLangName = allLanguages[trans.targetLang] || trans.targetLang;
-
-        resultDiv.innerHTML = `
-            <div style="margin-bottom: 12px;">
-                <strong>${getTranslation("originalText", [sourceLangName])}</strong><br>
-                <div style="background: #f8f9fa; padding: 10px; border-radius: 6px; margin-top: 6px; border-left: 3px solid #0066cc; white-space: pre-wrap; line-height: 1.4;">
-                    ${escapeHtml(trans.original)}
-                </div>
-            </div>
-            <div style="margin-bottom: 12px;">
-                <strong>${getTranslation("translatedText", [targetLangName])}</strong><br>
-                <div style="background: #e7f3ff; padding: 10px; border-radius: 6px; margin-top: 6px; border-left: 3px solid #28a745; white-space: pre-wrap; line-height: 1.4;">
-                    ${escapeHtml(trans.translated)}
-                </div>
-            </div>
-            <div class="language-info">
-                ${getTranslation("autoDetected", [sourceLangName])}<br>
-                ${getTranslation("translator")}<br>
-                ⏰ ${new Date(trans.timestamp).toLocaleString()}
-            </div>
-        `;
-
-        const copyButton = document.createElement('button');
-        copyButton.textContent = getTranslation("copyTranslation");
-        copyButton.style.cssText = 'width: 100%; padding: 10px; margin-top: 12px; background: #28a745; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px;';
-        copyButton.onclick = function() {
-            navigator.clipboard.writeText(trans.translated).then(() => {
-                copyButton.textContent = getTranslation("copiedToClipboard");
-                copyButton.style.background = '#6c757d';
-                setTimeout(() => {
-                    copyButton.textContent = getTranslation("copyTranslation");
-                    copyButton.style.background = '#28a745';
-                }, 2000);
-            });
-        };
-
-        resultDiv.querySelector('.language-info').after(copyButton);
+    console.log("Result div found:", !!resultDiv);
+    
+    if (!resultDiv) {
+        console.error("❌ Result div element not found!");
+        return;
     }
+    
+    if (!trans) {
+        console.log("⚠️ No translation data provided, showing default message");
+        showNoTranslation();
+        return;
+    }
+    
+    console.log("✅ Displaying translation...");
+    
+    // Полностью очищаем контейнер
+    resultDiv.textContent = '';
+    
+    const sourceLangName = allLanguages[trans.sourceLang] || trans.sourceLang;
+    const targetLangName = allLanguages[trans.targetLang] || trans.targetLang;
+
+    // Создаем блок с оригинальным текстом
+    const originalContainer = document.createElement('div');
+    originalContainer.style.marginBottom = '12px';
+    
+    const originalLabel = document.createElement('strong');
+    originalLabel.textContent = getTranslation("originalText", [sourceLangName]);
+    
+    const originalTextContainer = document.createElement('div');
+    originalTextContainer.style.background = '#f8f9fa';
+    originalTextContainer.style.padding = '10px';
+    originalTextContainer.style.borderRadius = '6px';
+    originalTextContainer.style.marginTop = '6px';
+    originalTextContainer.style.borderLeft = '3px solid #0066cc';
+    originalTextContainer.style.whiteSpace = 'pre-wrap';
+    originalTextContainer.style.lineHeight = '1.4';
+    originalTextContainer.textContent = trans.original;
+    
+    originalContainer.appendChild(originalLabel);
+    originalContainer.appendChild(document.createElement('br'));
+    originalContainer.appendChild(originalTextContainer);
+
+    // Создаем блок с переведенным текстом
+    const translatedContainer = document.createElement('div');
+    translatedContainer.style.marginBottom = '12px';
+    
+    const translatedLabel = document.createElement('strong');
+    translatedLabel.textContent = getTranslation("translatedText", [targetLangName]);
+    
+    const translatedTextContainer = document.createElement('div');
+    translatedTextContainer.style.background = '#e7f3ff';
+    translatedTextContainer.style.padding = '10px';
+    translatedTextContainer.style.borderRadius = '6px';
+    translatedTextContainer.style.marginTop = '6px';
+    translatedTextContainer.style.borderLeft = '3px solid #28a745';
+    translatedTextContainer.style.whiteSpace = 'pre-wrap';
+    translatedTextContainer.style.lineHeight = '1.4';
+    translatedTextContainer.textContent = trans.translated;
+    
+    translatedContainer.appendChild(translatedLabel);
+    translatedContainer.appendChild(document.createElement('br'));
+    translatedContainer.appendChild(translatedTextContainer);
+
+    // Создаем блок с информацией о переводе
+    const infoContainer = document.createElement('div');
+    infoContainer.className = 'language-info';
+    
+    const detectedInfo = document.createElement('div');
+    detectedInfo.textContent = getTranslation("autoDetected", [sourceLangName]);
+    
+    const translatorInfo = document.createElement('div');
+    translatorInfo.textContent = getTranslation("translator");
+    
+    const timestampInfo = document.createElement('div');
+    timestampInfo.textContent = '⏰ ' + new Date(trans.timestamp).toLocaleString();
+    
+    infoContainer.appendChild(detectedInfo);
+    infoContainer.appendChild(translatorInfo);
+    infoContainer.appendChild(timestampInfo);
+
+    // Собираем все вместе
+    resultDiv.appendChild(originalContainer);
+    resultDiv.appendChild(translatedContainer);
+    resultDiv.appendChild(infoContainer);
+
+    // Создаем кнопку копирования
+    const copyButton = document.createElement('button');
+    copyButton.textContent = getTranslation("copyTranslation");
+    copyButton.style.cssText = 'width: 100%; padding: 10px; margin-top: 12px; background: #28a745; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px;';
+    copyButton.onclick = function() {
+        navigator.clipboard.writeText(trans.translated).then(() => {
+            copyButton.textContent = getTranslation("copiedToClipboard");
+            copyButton.style.background = '#6c757d';
+            setTimeout(() => {
+                copyButton.textContent = getTranslation("copyTranslation");
+                copyButton.style.background = '#28a745';
+            }, 2000);
+        });
+    };
+
+    resultDiv.appendChild(copyButton);
 }
+    
 
 // Функция для экранирования HTML
 function escapeHtml(unsafe) {
@@ -484,13 +554,39 @@ function escapeHtml(unsafe) {
 }
 
 function showNoTranslation() {
-    document.getElementById('result').innerHTML = `
-        <div style="text-align: center; color: #6c757d; padding: 20px;">
-            <div style="font-size: 48px; margin-bottom: 10px;">🔤</div>
-            <strong>${getTranslation("noTranslationsYet")}</strong><br>
-            ${getTranslation("selectTextToTranslate")}
-        </div>
-    `;
+    const resultDiv = document.getElementById('result');
+    if (!resultDiv) {
+        console.error("Result div not found!");
+        return;
+    }
+    
+    // Полностью очищаем
+    resultDiv.textContent = '';
+    
+    // Создаем элементы вручную
+    const container = document.createElement('div');
+    container.style.textAlign = 'center';
+    container.style.color = '#6c757d';
+    container.style.padding = '20px';
+    
+    const emoji = document.createElement('div');
+    emoji.textContent = '🔤';
+    emoji.style.fontSize = '48px';
+    emoji.style.marginBottom = '10px';
+    
+    const message = document.createElement('strong');
+    message.textContent = getTranslation("noTranslationsYet");
+    
+    const instruction = document.createElement('div');
+    instruction.textContent = getTranslation("selectTextToTranslate");
+    
+    // Собираем структуру
+    container.appendChild(emoji);
+    container.appendChild(message);
+    container.appendChild(document.createElement('br'));
+    container.appendChild(instruction);
+    
+    resultDiv.appendChild(container);
 }
 
 function showStatus(message, type) {

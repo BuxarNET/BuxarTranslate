@@ -1,7 +1,7 @@
 
 {
 	"name": "BuxarTranslate",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Thunderbird extension for translating selected text in emails using Google Translate API",
 	"main": "src/background.js",
 	"scripts": {
