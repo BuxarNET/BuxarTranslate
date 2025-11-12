@@ -5,7 +5,7 @@
 
 # BuxarTranslate - Расширение для перевода в Thunderbird
 
-[![Thunderbird Add-on](https://img.shields.io/amo/v/BuxarTranslate.svg)](https://addons.thunderbird.net/)
+[![Thunderbird Add-on](https://img.shields.io/amo/v/BuxarTranslate.svg)](https://addons.thunderbird.net/thunderbird/addon/buxartranslate/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub release](https://img.shields.io/github/v/release/BuxarNET/BuxarTranslate)](https://github.com/BuxarNET/BuxarTranslate/releases)
 
@@ -59,12 +59,13 @@ cd BuxarTranslate
 npm run build
 
 ### Структура проекта
+```
 BuxarTranslate/
-├── src/                 # Исходный код расширения
+├── src/                # Исходный код расширения
 ├── docs/               # Документация
 ├── scripts/            # Скрипты сборки
 └── build/              # Собранные пакеты
-
+```
 ## 🌐 Поддерживаемые языки
 
 ### Языки интерфейса
@@ -107,6 +108,9 @@ BuxarTranslate/
 
 ### Россия
 - **ЮMoney**: [https://yoomoney.ru/to/4100173831748](https://yoomoney.ru/to/4100173831748)
+
+### Переводы из любой страны мира:
+- **Paysera**: Номер счета: EVP8610001034598
 
 Ваша поддержка помогает поддерживать и улучшать это расширение!
 
